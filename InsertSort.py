@@ -1,27 +1,6 @@
 import time
 import random
 
-def partition(A,p,r):
-    x=A[r]
-    i=p-1
-    for j in range(p,(r-1)+1):
-        if A[j]<=x:
-            i=i+1
-            A[i],A[j]=A[j],A[i]
-    A[i+1],A[r]=A[r],A[i+1]
-    return i+1
-
-
-
-def QucikSort(A,p,r):
-    if p<r:
-        q=partition(A, p, r)
-        QucikSort(A,p,q-1,)
-        QucikSort(A,q+1,r)
-
-
-
-
 
 def Insert_Sort(A):
     start=time.time()
@@ -61,20 +40,6 @@ while i<10000:
     A.append(n)
     i+=1
 
-# for v in A:
-#     print(v,end=" ")
-
-# print(" ")
-# print("Partition")
-# partition(A,0,10)
-# # for v in A:
-# #     print(v,end=" ")
-print(" ")
-print("QuickSorted")
-
-QucikSort(A,0,A[-1])
-# for v in A:
-#     print(v,end=" ")
 
 print(" ")
 print("Insertion-Sort")
@@ -85,6 +50,7 @@ while i<10000:
     A.append(n)
     i+=1
 Insert_Sort(A)
+A.reverse()
 # for v in A:
 #     print(v,end=" ")
 
@@ -97,4 +63,5 @@ while i<10000:
     A.append(n)
     i+=1
 selection_sort(A)
+A.reverse()
 

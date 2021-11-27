@@ -29,7 +29,6 @@ def build_max_hep(arr):
 
 
 def heapsort(arr):
-    start=time.time()
     build_max_hep(arr)
     lenght = len(arr)
     for i in range(lenght - 1, 0, -1):
@@ -37,15 +36,20 @@ def heapsort(arr):
         lenght = lenght - 1
         max_heapify(arr, 0, lenght - 1)
     end=time.time()-start
-    print(str(end.real)+"s")
+
 
 
 
 # print("heap ")
 # for v in range(len(arr)):
 #     print(arr[v], end=' ')
-
+start=time.time().real
 heapsort(arr)
+
+
+arr.reverse()
+end=time.time().real-start
+print(end)
 # print("Sorted heap ")
 # for v in range(len(arr)):
 #     print(arr[v], end=' ')
